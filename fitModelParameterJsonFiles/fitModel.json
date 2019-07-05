@@ -1,0 +1,40 @@
+{
+    "rootDir":"/home/eric/Dropbox/clairewoodData",
+    "studyName":"clairewoodStudyEPG",
+    "fitModel":"muscleEPG1",
+    "fitDir":"EPG1_10",
+    "T2fatParamsJson":"T2fatComponentModel.json",
+    "fitFunction":"Azz EPG fat/muscle model",
+    "T2fatValuesFile":"EPGAZZComponentModel.json",
+
+    "params_model_name" : {"AzzEPG":      "azz_fatmuscle_epg_model_params.json",
+                           "fatEPG2":     "two_fat_epg2_model_params.json",
+                           "fatEPG1":     "one_fat_epg1_model_params.json",
+                           "muscleEPG1":  "one_fatmuscle_epg1_model_params.json",
+                           "muscleEPG2" : "two_fatmuscle_epg2_model_params.json",
+                           "phantomEPG1": "oneParamEPGphantom_model_params.json",
+                           "phantomEPG2": "twoParamEPGphantom_model_params.json",
+                           "Azzabou":     "azz_params.json"
+                          },
+
+    "initialParamValues" : { "T2_fl": 1244.6106264392047,
+                               "T2_fs": 84.64065993272288,
+                               "c_l": 0.4033004914223305,
+                               "c_s": 0.6302861298104823
+                             },
+
+    "fitSubjectList": ["DMDT-001" ],
+
+    "imagedRegions":[ "foreArm"],
+    "imagedType":"muscle",
+
+    "sessions":["sess-01"],
+
+    "rois":["muscle"],
+    "roiSliceIndex":[7,10,13],
+    "islice":[0,1,2],
+    "pulseProfileSteps":10,
+    "p90pulseProfile":"flip_angle90_clairewood.mat",
+    "p180pulseProfile":"flip_angle180_clairewood.mat",
+    "dx":0.45
+}
