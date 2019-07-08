@@ -14,6 +14,7 @@ This repository consists of a number of python programs to set up a CPMG T2 MRI 
 
 An example of the directory structure created
 
+~~~
 \---testStudy
     |   study_description_file.yml
     |   
@@ -60,3 +61,4 @@ An example of the directory structure created
                                     T2_HC-001_sess-1_upperleg_AzzEPG_results.xls
                                     T2_HC-001_sess-1_upperleg_AzzEPG_summary.csv
                                     T2_HC-001_sess-1_upperleg_AzzEPG_summary.xls
+~~~
