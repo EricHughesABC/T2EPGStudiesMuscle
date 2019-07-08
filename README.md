@@ -6,6 +6,7 @@ Programs to work on MRI studies that fit T2 Data using EPG and classical approac
 The EPG and ijroieh modules need to be installed. These can be found at
 
    https://github.com/EricHughesABC/EPG
+   
    https://github.com/EricHughesABC/ijroieh
 
 ### Introduction
