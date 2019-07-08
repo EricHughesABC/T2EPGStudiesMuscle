@@ -1,0 +1,82 @@
+fitModel: Azzabou
+
+# use a relative directory path when fitting data in study directory structure
+# when fitting individual files it can be set to a complete path
+
+resultsDir: T2/results/muscle/Azzabou
+
+# Can only be used when fitting data in study directory structure
+# must be set as a relative directory path
+
+fatResultsDir: ""
+
+
+setParamValsIndividually: False
+
+# EPGAZZ model parameters to update
+# Always include the echo value
+
+ParamVals:
+    echo:
+        value: 10
+        min: 0
+        max: 11
+        vary: False
+    t2_fl:
+        value: 250
+        min:     0
+        max:     300
+        vary: False
+
+paramsModelName:
+    AzzEPG:      fitModelParameterJsonFiles/azz_fatmuscle_epg_model_params.json
+    fatEPG2:     fitModelParameterJsonFiles/two_fat_epg2_model_params.json
+    fatEPG1:     fitModelParameterJsonFiles/one_fat_epg1_model_params.json
+    muscleEPG1:  fitModelParameterJsonFiles/one_fatmuscle_epg1_model_params.json
+    muscleEPG2 : fitModelParameterJsonFiles/two_fatmuscle_epg2_model_params.json
+    phantomEPG1: fitModelParameterJsonFiles/oneParamEPGphantom_model_params.json
+    phantomEPG2: fitModelParameterJsonFiles/twoParamEPGphantom_model_params.json
+    Azzabou:     fitModelParameterJsonFiles/azz_params.json
+
+roiFitModel:
+    AzzEPG:      muscle
+    fatEPG2:     fat
+    fatEPG1:     fat
+    muscleEPG1:  muscle
+    muscleEPG2 : muscle
+    phantomEPG1: phantom
+    phantomEPG2: phantom
+    Azzabou:     muscle
+
+fitSubject: [HC-001]
+fitSession: [sess-1]
+fitImagedRegions: [upperleg]
+fitSlices: [2,3,4]
+
+useRoiOutline: False
+
+roiAuthorPreference: [EH]
+imageDataFormat: Analyze
+
+#roisIndividual: simpleModelData/DMD_001_FOREARM_muscle_RoiSet.zip
+#
+#roiOutline:     simpleModelData/EH_DMDT_001_1_foreArm_outline.zip
+#
+#analyzeHdr: simpleModelData/WIP_Forearm_T2_CLEAR.hdr
+#analyzeImg: simpleModelData/WIP_Forearm_T2_CLEAR.img
+
+# minimum step size across profile =  1
+# maximum step size across profile = 19
+
+pulseProfileSteps: 10
+
+# pulse profile should correspond to the protocol that was used to collect
+# the data. Only used when EPG fits are used
+
+p90pulseProfile: simpleModelData/flip_angle90_clairewood.mat
+p180pulseProfile: simpleModelData/flip_angle180_clairewood.mat
+
+# integration factor, might need to be altered based on value of
+# pulseProfileSteps and fit model being used
+
+dx: 0.45

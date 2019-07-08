@@ -1,0 +1,114 @@
+ParamVals:
+  c_l:
+    max: !!python/object/apply:numpy.core.multiarray.scalar
+    - &id001 !!python/object/apply:numpy.dtype
+      args:
+      - f8
+      - 0
+      - 1
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - !!binary |
+      Quu13l0r+D8=
+    min: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      +lIohYhS378=
+    value: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      g9ZrvbtW4D8=
+  c_s:
+    max: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      vhRKIaLU9z8=
+    min: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      hNZrvbtW4L8=
+    value: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      91IohYhS3z8=
+  echo:
+    max: 11
+    min: 0
+    value: 10
+    vary: false
+  t2_fl:
+    max: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      mZZGQH+Jb0A=
+    min: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      mZZGQH9Jb0A=
+    value: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      mZZGQH9pb0A=
+  t2_fs:
+    max: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      4Eoa3Fn7UUA=
+    min: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      4Eoa3Fl7UUA=
+    value: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      4Eoa3Fm7UUA=
+analyzeHdr: simpleModelData/WIP_Forearm_T2_CLEAR.hdr
+analyzeImg: simpleModelData/WIP_Forearm_T2_CLEAR.img
+dx: 0.45
+fatResultsDir: T2/results/fat/fatEPG2
+fitImagedRegions:
+- upperleg
+fitModel: AzzEPG
+fitSession:
+- sess-1
+fitSlices:
+- 2
+- 3
+- 4
+fitSubject:
+- HC-001
+imageDataFormat: Analyze
+p180pulseProfile: simpleModelData/flip_angle180_visionDMD.mat
+p90pulseProfile: simpleModelData/flip_angle90_visionDMD.mat
+paramsModelName:
+  AzzEPG: fitModelParameterJsonFiles/azz_fatmuscle_epg_model_params.json
+  Azzabou: fitModelParameterJsonFiles/azz_params.json
+  fatEPG1: fitModelParameterJsonFiles/one_fat_epg1_model_params.json
+  fatEPG2: fitModelParameterJsonFiles/two_fat_epg2_model_params.json
+  muscleEPG1: fitModelParameterJsonFiles/one_fatmuscle_epg1_model_params.json
+  muscleEPG2: fitModelParameterJsonFiles/two_fatmuscle_epg2_model_params.json
+  phantomEPG1: fitModelParameterJsonFiles/oneParamEPGphantom_model_params.json
+  phantomEPG2: fitModelParameterJsonFiles/twoParamEPGphantom_model_params.json
+pulseProfileSteps: 10
+resultsDir: T2/results/muscle/AzzEPG
+roiAuthorPreference:
+- EH
+roiFitModel:
+  AzzEPG: muscle
+  Azzabou: muscle
+  fatEPG1: fat
+  fatEPG2: fat
+  muscleEPG1: muscle
+  muscleEPG2: muscle
+  phantomEPG1: phantom
+  phantomEPG2: phantom
+roiOutline: simpleModelData/EH_DMDT_001_1_foreArm_outline.zip
+setParamValsIndividually: true
+useRoiOutline: false

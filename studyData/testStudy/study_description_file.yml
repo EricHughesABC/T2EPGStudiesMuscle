@@ -1,0 +1,60 @@
+groupNames:
+- healthyVolunteers
+healthyVolunteers:
+  imagedRegions:
+  - upperleg
+  name: healthyVolunteers
+  numSessions: 1
+  participants:
+  - HC-001
+  rois:
+    upperleg:
+      fat:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+      muscle:
+      - VL
+      - BL
+      outline:
+      - '1'
+  sessions:
+  - sess-1
+  slices:
+    upperleg:
+      fat:
+        T2:
+        - '2'
+      muscle:
+        T2:
+        - '2'
+        - '3'
+        - '4'
+      outline:
+        T2:
+        - '2'
+        - '3'
+        - '4'
+principalInvestigators:
+- address: ''
+  email: ''
+  initials: ''
+  name: ''
+protocols:
+- T2
+researchAssociates:
+- address: ''
+  email: ''
+  initials: ''
+  name: ''
+roiAuthors:
+- EH
+students:
+- address: ''
+  email: ''
+  initials: ''
+  name: ''
+studyName: testStudy
+studyRootDir: C:/Users/ERIC/Dropbox/projects/programming/2019/T2EPGStudiesMuscle/studyData

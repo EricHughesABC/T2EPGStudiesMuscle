@@ -2,4 +2,5 @@ lmfit
 nibabel
 guidata
 PySimpleGUI
+xlwt
 

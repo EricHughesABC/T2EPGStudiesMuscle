@@ -1,0 +1,42 @@
+ParamVals:
+  echo:
+    value: 10.0
+    vary: false
+dx: 0.45
+fatResultsDir: ''
+fitImagedRegions:
+- upperleg
+fitModel: fatEPG1
+fitSession:
+- sess-1
+fitSlices:
+- 2
+fitSubject:
+- HC-001
+imageDataFormat: Analyze
+p180pulseProfile: simpleModelData/flip_angle180_visionDMD.mat
+p90pulseProfile: simpleModelData/flip_angle90_visionDMD.mat
+paramsModelName:
+  AzzEPG: fitModelParameterJsonFiles/azz_fatmuscle_epg_model_params.json
+  Azzabou: fitModelParameterJsonFiles/azz_params.json
+  fatEPG1: fitModelParameterJsonFiles/one_fat_epg1_model_params.json
+  fatEPG2: fitModelParameterJsonFiles/two_fat_epg2_model_params.json
+  muscleEPG1: fitModelParameterJsonFiles/one_fatmuscle_epg1_model_params.json
+  muscleEPG2: fitModelParameterJsonFiles/two_fatmuscle_epg2_model_params.json
+  phantomEPG1: fitModelParameterJsonFiles/oneParamEPGphantom_model_params.json
+  phantomEPG2: fitModelParameterJsonFiles/twoParamEPGphantom_model_params.json
+pulseProfileSteps: 10
+resultsDir: T2/results/fat/fatEPG1
+roiAuthorPreference:
+- EH
+roiFitModel:
+  AzzEPG: muscle
+  Azzabou: muscle
+  fatEPG1: fat
+  fatEPG2: fat
+  muscleEPG1: muscle
+  muscleEPG2: muscle
+  phantomEPG1: phantom
+  phantomEPG2: phantom
+setParamValsIndividually: false
+useRoiOutline: false

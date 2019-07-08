@@ -724,6 +724,7 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
             for imagedRegion in fitModelData.fitImagedRegions:
 
                 if not os.path.exists( os.path.join( studyDir_directory, subject, session, imagedRegion)):
+                    print("path does not exist")
                     print(os.path.join( studyDir_directory, subject, session, imagedRegion))
                     continue
 
@@ -731,7 +732,9 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                 # Read in extra parameters
                 ###################################################################
 
+                print("fitModelData.setParamValsIndividually",fitModelData.setParamValsIndividually)
                 if fitModelData.setParamValsIndividually:
+                    
                     if fitModelData.fitModel == "AzzEPG":
 
                         # read in fat paremeters
@@ -740,9 +743,12 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                         csv =[os.path.join(directory,fn) for fn in os.listdir(directory) if "results.csv" in fn ]
 
                         twofatEPG_df = pd.read_csv(csv[0])
+                        print(csv)
+            
 
                         fitModelData.ParamVals['t2_fl']={}
                         t2_fl_mean = twofatEPG_df.T2fl.mean()
+                        print("t2_fl_mean",t2_fl_mean)
                         fitModelData.ParamVals['t2_fl']['min']=t2_fl_mean-1.0
                         fitModelData.ParamVals['t2_fl']['max']=t2_fl_mean+1.0
                         fitModelData.ParamVals['t2_fl']['value']=t2_fl_mean
@@ -773,11 +779,13 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                         directory = os.path.join(studyDir_directory, subject, session, imagedRegion,fitModelData.fatResultsDir)
 
                         csv =[os.path.join(directory,fn) for fn in os.listdir(directory) if "results.csv" in fn ]
+                        print(csv)
 
                         onefatEPG_df = pd.read_csv(csv[0])
 
                         fitModelData.ParamVals['T2_fl']={}
                         t2_fl_mean = onefatEPG_df.T2fl.mean()
+                        print("t2_fl_mean", t2_fl_mean )
                         fitModelData.ParamVals['T2_fl']['min']=t2_fl_mean-1.0
                         fitModelData.ParamVals['T2_fl']['max']=t2_fl_mean+1.0
                         fitModelData.ParamVals['T2_fl']['value']=t2_fl_mean
