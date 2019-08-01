@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Set-up of the fitModeldata yaml file &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FitModeldData file main parameters" href="ch6.html" />
+    <link rel="prev" title="Analyzing Data in the Study Structure" href="ch4.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ch6.html" title="FitModeldData file main parameters"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ch4.html" title="Analyzing Data in the Study Structure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="set-up-of-the-fitmodeldata-yaml-file">
+<h1>Set-up of the fitModeldata yaml file<a class="headerlink" href="#set-up-of-the-fitmodeldata-yaml-file" title="Permalink to this headline">¶</a></h1>
+<p>Information to process the data in the study is provided to the fitting
+program by a fitmodelData yaml file. Examples of these files can be
+found in the <strong>fitModelDataYAMLfiles</strong> directory for fitting single data
+sets and in the <strong>examples/fitModelDataYAMLfiles</strong> directory for fitting
+data in a study directory structure.</p>
+<ul class="simple">
+<li>fitStudyDataEPGAzz</li>
+<li>fitStudyDataFatEPG2</li>
+<li>fitStudyDataMuscleEPG1</li>
+</ul>
+<p>The fitting program is capable of fitting a number of different models
+to the T<sub>2</sub> image data based on the model structure found in the
+Azzabou paper. Muscle, fat and phantom data can be fit by the program
+using a simple exponential decay model or an extended phase graph model
+(EPG). This document will focus on fitting the T<sub>2</sub> image data
+using the EPG model.</p>
+<p>The example taken will be to fit the T<sub>2</sub> image data using the
+<strong>fitStudyDataEPGAzzAnalyze</strong> yaml file.</p>
+<p>The contents of the file are given below. Line numbers have been added
+to help with the explanation of the file, but the user should be aware
+that the sequential order of the different groups within the file is not
+important. The example YAML file has been set up to be used on the study
+directory structure defined earlier. The YAML input file has been
+designed to be used on data in a study directory structure or on
+individual files which have been defined within the file. In the
+following paragraphs the different parts of the file will be discussed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>       <span class="n">fitModel</span><span class="p">:</span> <span class="n">AzzEPG</span>
+<span class="mi">2</span>
+<span class="mi">3</span>       <span class="c1"># use a relative directory path when fitting data in study directory structure</span>
+<span class="mi">4</span>       <span class="c1"># when fitting individual files it can be set to a complete path</span>
+<span class="mi">5</span>
+<span class="mi">6</span>       <span class="n">resultsDir</span><span class="p">:</span> <span class="n">T2</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">muscle</span><span class="o">/</span><span class="n">AzzEPG</span>
+<span class="mi">7</span>
+<span class="mi">8</span>       <span class="c1"># Can only be used when fitting data in study directory structure</span>
+<span class="mi">9</span>       <span class="c1"># must be set as a relative directory path</span>
+<span class="mi">10</span>
+<span class="mi">11</span>      <span class="n">fatResultsDir</span><span class="p">:</span> <span class="n">T2</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">fat</span><span class="o">/</span><span class="n">fatEPG2</span>
+<span class="mi">12</span>      <span class="n">setParamValsIndividually</span><span class="p">:</span> <span class="kc">True</span>
+<span class="mi">13</span>
+<span class="mi">14</span>      <span class="c1"># EPGAZZ model parameters to update</span>
+<span class="mi">15</span>      <span class="c1"># Always include the echo value</span>
+<span class="mi">16</span>
+<span class="mi">17</span>      <span class="n">ParamVals</span><span class="p">:</span>
+<span class="mi">18</span>          <span class="n">echo</span><span class="p">:</span>
+<span class="mi">19</span>              <span class="n">value</span><span class="p">:</span> <span class="mi">8</span>
+<span class="mi">20</span>              <span class="nb">min</span><span class="p">:</span> <span class="mi">0</span>
+<span class="mi">21</span>              <span class="nb">max</span><span class="p">:</span> <span class="mi">10</span>
+<span class="mi">22</span>              <span class="n">vary</span><span class="p">:</span> <span class="kc">False</span>
+<span class="mi">23</span>
+<span class="mi">24</span>      <span class="n">paramsModelName</span><span class="p">:</span>
+<span class="mi">25</span>          <span class="n">AzzEPG</span><span class="p">:</span>      <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">azz_fatmuscle_epg_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">26</span>          <span class="n">fatEPG2</span><span class="p">:</span>     <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">two_fat_epg2_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">27</span>          <span class="n">fatEPG1</span><span class="p">:</span>     <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">one_fat_epg1_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">28</span>          <span class="n">muscleEPG1</span><span class="p">:</span>  <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">one_fatmuscle_epg1_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">29</span>          <span class="n">muscleEPG2</span> <span class="p">:</span> <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">two_fatmuscle_epg2_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">30</span>          <span class="n">phantomEPG1</span><span class="p">:</span> <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">oneParamEPGphantom_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">31</span>          <span class="n">phantomEPG2</span><span class="p">:</span> <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">twoParamEPGphantom_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">32</span>          <span class="n">Azzabou</span><span class="p">:</span>     <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">azz_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">33</span>
+<span class="mi">34</span>      <span class="n">roiFitModel</span><span class="p">:</span>
+<span class="mi">35</span>          <span class="n">AzzEPG</span><span class="p">:</span>      <span class="n">muscle</span>
+<span class="mi">36</span>          <span class="n">fatEPG2</span><span class="p">:</span>     <span class="n">fat</span>
+<span class="mi">37</span>          <span class="n">fatEPG1</span><span class="p">:</span>     <span class="n">fat</span>
+<span class="mi">38</span>          <span class="n">muscleEPG1</span><span class="p">:</span>  <span class="n">muscle</span>
+<span class="mi">39</span>          <span class="n">muscleEPG2</span> <span class="p">:</span> <span class="n">muscle</span>
+<span class="mi">40</span>          <span class="n">phantomEPG1</span><span class="p">:</span> <span class="n">phantom</span>
+<span class="mi">41</span>          <span class="n">phantomEPG2</span><span class="p">:</span> <span class="n">phantom</span>
+<span class="mi">42</span>          <span class="n">Azzabou</span><span class="p">:</span>     <span class="n">muscle</span>
+<span class="mi">43</span>
+<span class="mi">44</span>      <span class="n">fitSubject</span><span class="p">:</span> <span class="p">[</span><span class="n">HC</span><span class="o">-</span><span class="mi">001</span><span class="p">]</span>
+<span class="mi">45</span>      <span class="n">fitSession</span><span class="p">:</span> <span class="p">[</span><span class="n">sess</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">46</span>      <span class="n">fitImagedRegions</span><span class="p">:</span> <span class="p">[</span><span class="n">forearm</span><span class="p">]</span>
+<span class="mi">47</span>      <span class="n">fitSlices</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="mi">48</span>
+<span class="mi">49</span>      <span class="n">useRoiOutline</span><span class="p">:</span> <span class="kc">False</span>
+<span class="mi">50</span>
+<span class="mi">51</span>      <span class="n">roiAuthorPreference</span><span class="p">:</span> <span class="p">[</span><span class="n">EH</span><span class="p">]</span>
+<span class="mi">52</span>      <span class="n">imageDataFormat</span><span class="p">:</span> <span class="n">Analyze</span>
+<span class="mi">53</span>
+<span class="mi">54</span>      <span class="c1">#roisIndividual: simpleModelData/DMD_001_FOREARM_RoiSet.zip</span>
+<span class="mi">55</span>
+<span class="mi">56</span>      <span class="n">roiOutline</span><span class="p">:</span>     <span class="n">simpleModelData</span><span class="o">/</span><span class="n">EH_DMDT_001_1_foreArm_outline</span><span class="o">.</span><span class="n">zip</span>
+<span class="mi">57</span>
+<span class="mi">58</span>      <span class="n">analyzeHdr</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">WIP_Forearm_T2_CLEAR</span><span class="o">.</span><span class="n">hdr</span>
+<span class="mi">59</span>      <span class="n">analyzeImg</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">WIP_Forearm_T2_CLEAR</span><span class="o">.</span><span class="n">img</span>
+<span class="mi">60</span>
+<span class="mi">61</span>      <span class="c1"># minimum step size across profile =  1</span>
+<span class="mi">62</span>      <span class="c1"># maximum step size across profile = 19</span>
+<span class="mi">63</span>
+<span class="mi">64</span>      <span class="n">pulseProfileSteps</span><span class="p">:</span> <span class="mi">10</span>
+<span class="mi">65</span>
+<span class="mi">66</span>      <span class="c1"># pulse profile should correspond to the protocol that was used to collect</span>
+<span class="mi">67</span>      <span class="c1"># the data</span>
+<span class="mi">68</span>
+<span class="mi">69</span>      <span class="n">p90pulseProfile</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">flip_angle90_clairewood</span><span class="o">.</span><span class="n">mat</span>
+<span class="mi">70</span>      <span class="n">p180pulseProfile</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">flip_angle180_clairewood</span><span class="o">.</span><span class="n">mat</span>
+<span class="mi">71</span>
+<span class="mi">72</span>      <span class="c1"># integration factor, might need to be altered based on value of</span>
+<span class="mi">73</span>      <span class="c1"># pulseProfileSteps and fit model being used</span>
+<span class="mi">74</span>
+<span class="mi">75</span>      <span class="n">dx</span><span class="p">:</span> <span class="mf">0.45</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch4.html"
+                        title="previous chapter">Analyzing Data in the Study Structure</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ch6.html"
+                        title="next chapter">FitModeldData file main parameters</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/ch5.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ch6.html" title="FitModeldData file main parameters"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ch4.html" title="Analyzing Data in the Study Structure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

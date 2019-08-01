@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Output from T2 Fitting Program: fitEPGazz.py &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Naming Conventions for ROI File-names" href="ch9.html" />
+    <link rel="prev" title="Fitting T2 Data with fitEPGazz.py" href="ch7.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ch9.html" title="Naming Conventions for ROI File-names"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ch7.html" title="Fitting T2 Data with fitEPGazz.py"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="output-from-t2-fitting-program-fitepgazz-py">
+<h1>Output from T<sub>2</sub> Fitting Program: fitEPGazz.py<a class="headerlink" href="#output-from-t2-fitting-program-fitepgazz-py" title="Permalink to this headline">¶</a></h1>
+<p>The fitModelData YAML file and three data files are produced from the
+fitting program in CSV and Excel format:</p>
+<ul class="simple">
+<li>A results file listing all the fitted data at a pixel level in one
+table based on slices and ROIs. _results.csv(.xls)</li>
+<li>A Summary file of the mean and standard deviation for each ROI in
+each slice. _summary.csv(.xls)</li>
+<li>An aggregated summary file giving the weighted mean of each parameter
+for each ROI averaged over slices and pixels in each ROI.
+_summaryAgg.csv(.xls)</li>
+</ul>
+<p>The YAML file and the three results files are produced for single data
+sources and data present in a study directory structure.</p>
+<p>When the data is derived from a study directory structure, the filename
+includes the subject, the session, the imaged region, and the model used
+together with the appropriate descriptor to indicate the type of data in
+the file. The files are best saved in a
+<em>T2/results/imagedRegionType/model</em> directory at the appropriate point
+in study directory structure for the fitted data. This should be set in
+the <strong>fitModelData</strong> file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>       <span class="c1"># use a relative directory path when fitting data in study directory structure</span>
+<span class="mi">4</span>       <span class="c1"># when fitting individual files it can be set to a complete path</span>
+<span class="mi">5</span>
+<span class="mi">6</span>       <span class="n">resultsDir</span><span class="p">:</span> <span class="n">T2</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">muscle</span><span class="o">/</span><span class="n">AzzEPG</span>
+</pre></div>
+</div>
+<p>When data is derived from a single file, the filename includes the model
+used and appropriate descriptor for the file. The directory where the
+data is stored is given in the fitModelData file. A relative or absolute
+path can be used.</p>
+<p>When the T<sub>2</sub> fitting program is used on single file data, then
+plots of the ROIs overlayed over the imaged region are displayed in in a
+single plot (Figure 1) and a representative plot of the fitting results
+(Figure 2) for a single pixel data set is displayed in a second
+independent plot taken from data from the middle of the data set.</p>
+<p><a class="reference internal" href="../_images/image12.png"><img alt="image0" src="../_images/image12.png" style="width: 3.82292in; height: 1.59028in;" /></a></p>
+<p>Figure 1 Overlay of ROIs on fitted Image</p>
+<p><a class="reference internal" href="../_images/image22.png"><img alt="image1" src="../_images/image22.png" style="width: 3.82708in; height: 1.90556in;" /></a></p>
+<p>Figure 2 Quality of fit to data</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch7.html"
+                        title="previous chapter">Fitting T<sub>2</sub> Data with fitEPGazz.py</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ch9.html"
+                        title="next chapter">Naming Conventions for ROI File-names</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/ch8.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ch9.html" title="Naming Conventions for ROI File-names"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ch7.html" title="Fitting T2 Data with fitEPGazz.py"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

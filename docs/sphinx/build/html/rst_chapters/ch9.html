@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Naming Conventions for ROI File-names &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix A. Model Parameter Files and Fitting Equations" href="appendixA.html" />
+    <link rel="prev" title="Output from T2 Fitting Program: fitEPGazz.py" href="ch8.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="appendixA.html" title="Appendix A. Model Parameter Files and Fitting Equations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ch8.html" title="Output from T2 Fitting Program: fitEPGazz.py"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="naming-conventions-for-roi-file-names">
+<h1>Naming Conventions for ROI File-names<a class="headerlink" href="#naming-conventions-for-roi-file-names" title="Permalink to this headline">¶</a></h1>
+<p>One of the aims of the scripts produced during this work was to minimize
+the variation in filenames for such things as ROIs or results files.
+This is why it is stressed that researchers should use the stury
+directory approach even for small data sets or when a study is in
+development and being scoped. However, the authors are aware that on
+occasion it may be more convenient to work on single datasets in a less
+structured manner. However, for the fitting programs to work, the ROI
+files must follow a minimum naming structure. The details are outlined
+below.</p>
+<ul class="simple">
+<li>If the ROIs are outline ROIs then this must be present in the zipped
+file-name of the set of ROIs encased in underscores, _outline_.</li>
+<li>It is a good idea to add what the imagedType the ROIs are of. For
+example, _muscle_, _fat_, _phantom_, _brain_.</li>
+</ul>
+<p>The individual ROIs within the zipped file should also follow a certain
+naming convention. This should include the following:</p>
+<ul class="simple">
+<li>The slice number should be included, starting from an index of one
+and be identified by adding the word slice and connecting the number
+with a hyphon, for example, <a href="#id1"><span class="problematic" id="id2">slice-1_</span></a>, or _slice-2_ and separated
+from other parts of the filename with an underscore.</li>
+<li>The word or number identifying the ROI should be placed at the end of
+filename before the extension descriptor. For example
+slice-1_muscle_roi1.roi or slice-1_fat_1.roi or
+slice1_muscle_extensor.roi. The ROI identifier must be unique within
+a set of ROIs.</li>
+<li>It is also a good idea to add the initials of the person who drew the
+ROI. For example, KGH_slice-1_muscle_extensor.roi. This is useful for
+book-keeping purposes.</li>
+</ul>
+<p>When data is derived from a single file, the filename includes the model
+used and appropriate descriptor for the file. The directory where the
+data is stored is given in the fitModelData file. A relative or absolute
+path can be used.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch8.html"
+                        title="previous chapter">Output from T<sub>2</sub> Fitting Program: fitEPGazz.py</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="appendixA.html"
+                        title="next chapter">Appendix A. Model Parameter Files and Fitting Equations</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/ch9.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="appendixA.html" title="Appendix A. Model Parameter Files and Fitting Equations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ch8.html" title="Output from T2 Fitting Program: fitEPGazz.py"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

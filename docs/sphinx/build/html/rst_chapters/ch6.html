@@ -1,0 +1,308 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FitModeldData file main parameters &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fitting T2 Data with fitEPGazz.py" href="ch7.html" />
+    <link rel="prev" title="Set-up of the fitModeldata yaml file" href="ch5.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ch7.html" title="Fitting T2 Data with fitEPGazz.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ch5.html" title="Set-up of the fitModeldata yaml file"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fitmodelddata-file-main-parameters">
+<h1>FitModeldData file main parameters<a class="headerlink" href="#fitmodelddata-file-main-parameters" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="model-definition">
+<h2>Model Definition<a class="headerlink" href="#model-definition" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the file states which model will be used by the
+fitting program</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>       <span class="n">fitModel</span><span class="p">:</span> <span class="n">AzzEPG</span>
+</pre></div>
+</div>
+<p>The model chosen must come from the eight fit models defined in lines 24
+to 32. For each model there is a corresponding parameter file defined.
+These lines in the file, together with lines 34 to 42 should not be
+altered.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">24</span>      <span class="n">paramsModelName</span><span class="p">:</span>
+<span class="mi">25</span>          <span class="n">AzzEPG</span><span class="p">:</span>      <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">azz_fatmuscle_epg_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">26</span>          <span class="n">fatEPG2</span><span class="p">:</span>     <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">two_fat_epg2_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">27</span>          <span class="n">fatEPG1</span><span class="p">:</span>     <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">one_fat_epg1_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">28</span>          <span class="n">muscleEPG1</span><span class="p">:</span>  <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">one_fatmuscle_epg1_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">29</span>          <span class="n">muscleEPG2</span> <span class="p">:</span> <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">two_fatmuscle_epg2_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">30</span>          <span class="n">phantomEPG1</span><span class="p">:</span> <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">oneParamEPGphantom_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">31</span>          <span class="n">phantomEPG2</span><span class="p">:</span> <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">twoParamEPGphantom_model_params</span><span class="o">.</span><span class="n">json</span>
+<span class="mi">32</span>          <span class="n">Azzabou</span><span class="p">:</span>     <span class="n">fitModelParameterJsonFiles</span><span class="o">/</span><span class="n">azz_params</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<div class="section" id="study-data-directory-structure-used-or-not">
+<h3>Study Data Directory Structure Used or Not.<a class="headerlink" href="#study-data-directory-structure-used-or-not" title="Permalink to this headline">¶</a></h3>
+<p>It was stated earlier that this file can be used to work on data found
+in a study directory structure or directly on files in a single
+directory. This is achieved by either putting a list of participants in
+the <strong>fitSubject</strong> list or setting it to empty.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">44</span>      <span class="n">fitSubject</span><span class="p">:</span> <span class="p">[</span><span class="n">HC</span><span class="o">-</span><span class="mi">001</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this configuration we will use data found in study directory
+structure. If the line had been set in the following manner</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">44</span>      <span class="n">fitSubject</span><span class="p">:</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>then the program would work on named files within the fitModeldata file
+defined in lines 54 to 59</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">54</span>      <span class="c1">#roisIndividual: simpleModelData/DMD_001_FOREARM_RoiSet.zip</span>
+<span class="mi">55</span>
+<span class="mi">56</span>      <span class="n">roiOutline</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">EH_DMDT_001_1_foreArm_outline</span><span class="o">.</span><span class="n">zip</span>
+<span class="mi">57</span>
+<span class="mi">58</span>      <span class="n">analyzeHdr</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">WIP_Forearm_T2_CLEAR</span><span class="o">.</span><span class="n">hdr</span>
+<span class="mi">59</span>      <span class="n">analyzeImg</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">WIP_Forearm_T2_CLEAR</span><span class="o">.</span><span class="n">img</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="defining-sessions-imaged-regions-and-slices">
+<h2>Defining sessions, imaged regions and slices<a class="headerlink" href="#defining-sessions-imaged-regions-and-slices" title="Permalink to this headline">¶</a></h2>
+<p>If the fitting program is taking data from the Data Directory Structure
+then the sessions and imaged regions to be used are defined as lists in
+lines 45 and 47. If defined data is used then the <strong>fitSession</strong> and
+<strong>fitImagedRegions</strong> fields are ignored.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">45</span>      <span class="n">fitSession</span><span class="p">:</span> <span class="p">[</span><span class="n">sess</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">46</span>      <span class="n">fitImagedRegions</span><span class="p">:</span> <span class="p">[</span><span class="n">forearm</span><span class="p">]</span>
+<span class="mi">47</span>      <span class="n">fitSlices</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The slices to be used in the fitting are defined in line 47. The slices
+defined in this list are also used when the program works on defined
+data.</p>
+</div>
+<div class="section" id="updating-the-values-in-the-lmfit-parameter-structures">
+<h2>Updating the values in the LMFIT parameter structures.<a class="headerlink" href="#updating-the-values-in-the-lmfit-parameter-structures" title="Permalink to this headline">¶</a></h2>
+<p>Initial starting values for parameters can be set within the file by
+updating the fields starting at lines 18 to 22</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">14</span>      <span class="c1"># EPGAZZ model parameters to update</span>
+<span class="mi">15</span>      <span class="c1"># Always include the echo value</span>
+<span class="mi">16</span>
+<span class="mi">17</span>      <span class="n">ParamVals</span><span class="p">:</span>
+<span class="mi">18</span>          <span class="n">echo</span><span class="p">:</span>
+<span class="mi">19</span>              <span class="n">value</span><span class="p">:</span> <span class="mi">8</span>
+<span class="mi">20</span>              <span class="nb">min</span><span class="p">:</span> <span class="mi">0</span>
+<span class="mi">21</span>              <span class="nb">max</span><span class="p">:</span> <span class="mi">10</span>
+<span class="mi">22</span>              <span class="n">vary</span><span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>As shown in the example the echo spacing time must always be set in the
+file. Further parameters within the fitting model can be set in a
+similar manner. Parameters that might want to be changed could be the
+the T<sub>2</sub> values of the fat in the model, or the initial guess of
+the muscle T<sub>2</sub>.</p>
+<p>As an example, further items may be added to the file in the following
+manner to set the long and short T<sub>2</sub> components of the fat.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ParamVals</span><span class="p">:</span>
+    <span class="n">echo</span><span class="p">:</span>
+        <span class="n">value</span><span class="p">:</span> <span class="mf">8.0</span>
+    <span class="n">t2_l</span><span class="p">:</span>
+        <span class="n">value</span><span class="p">:</span> <span class="mf">250.0</span>
+        <span class="nb">min</span><span class="p">:</span>   <span class="mf">0.0</span>
+        <span class="nb">max</span><span class="p">:</span>   <span class="mf">300.0</span>
+        <span class="n">vary</span><span class="p">:</span>  <span class="kc">False</span>
+    <span class="n">t2_s</span><span class="p">:</span>
+        <span class="n">value</span><span class="p">:</span> <span class="mf">80.0</span>
+        <span class="nb">min</span><span class="p">:</span>   <span class="mf">0.0</span>
+        <span class="nb">max</span><span class="p">:</span>   <span class="mf">300.0</span>
+        <span class="n">vary</span><span class="p">:</span>  <span class="kc">False</span>
+</pre></div>
+</div>
+<p>In this example all the attributes of the two T<sub>2</sub> fat parameters
+are set, i.e. value,minimum, maximum and is it varied in the model. The
+minimum and maximum are set so that they cover the new value for the
+parameter. If the value is beyond the range present in the original
+parameter file then it will be incorrectly set. The vary attribute could
+be omitted from the definition. If is is changed from its original
+setting within the original parameter file then the model will be
+changed as more or less parameters are varied during the fit. It is best
+not to change the <strong>vary</strong> attribute from its original setting.</p>
+<p>The parameters that can be altered are listed below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A_f</span>
+<span class="n">A_m</span>
+<span class="n">B1</span>
+<span class="n">T1_f</span>
+<span class="n">T1_m</span>
+<span class="n">c_l</span>
+<span class="n">c_s</span>
+<span class="n">echo</span>
+<span class="n">t2_fl</span>
+<span class="n">t2_fs</span>
+<span class="n">t2_m</span>
+</pre></div>
+</div>
+<p>The flag <strong>setParamValsIndividually</strong> is set to <strong>True</strong> in the file in
+this example. In this case, then fat values are calculated from previous
+model data in the study directory structure for each participant in the
+<strong>fitSubject</strong> list. This flag can only be set to <strong>True</strong> when data is
+being fit from a study directory structure. When this is the case the
+path to the fat data should be indicated using the <strong>fatResultsDir</strong>
+flag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span>      <span class="n">fatResultsDir</span><span class="p">:</span> <span class="n">T2</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">fat</span><span class="o">/</span><span class="n">fatEPG2</span>
+</pre></div>
+</div>
+<p>When the flag <strong>setParamValsIndividually</strong> is set to <strong>False</strong> then all
+the fat parameters for certain models are set from within the file if
+they are present, for all participants.</p>
+</div>
+<div class="section" id="roi-author-preferences-roiauthorpreference">
+<h2>ROI Author Preferences :: roiAuthorPreference<a class="headerlink" href="#roi-author-preferences-roiauthorpreference" title="Permalink to this headline">¶</a></h2>
+<p>The field <strong>roiAuthorPreferences</strong> at line 51 gives a list of author
+initials that are used to choose which ROI files are used.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">51</span>      <span class="n">roiAuthorPreference</span><span class="p">:</span> <span class="p">[</span><span class="n">EH</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The order of the list gives the priority, if a certain author cannot be
+found, then the next author initials will be used to choose the correct
+ROI files. This option is only acted upon when the fitting scripts are
+used within a study dierctory structure.</p>
+</div>
+<div class="section" id="use-roi-outline-useroioutline">
+<h2>Use Roi Outline :: useRoiOutline<a class="headerlink" href="#use-roi-outline-useroioutline" title="Permalink to this headline">¶</a></h2>
+<p>This option is set to <strong>True</strong> when an outline ROI is used to define
+which part of the image is to be fit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">38</span>      <span class="n">useRoiOutline</span><span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Outline ROI filenames must include the word <strong>outline</strong> in their name
+for the programs to function correctly</p>
+</div>
+<div class="section" id="image-data-format-imagedataformat">
+<h2>Image Data Format :: imageDataFormat<a class="headerlink" href="#image-data-format-imagedataformat" title="Permalink to this headline">¶</a></h2>
+<p>The fitting progams can now read in both analyze and nifti data formats.
+This must be indicated in the file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">52</span>      <span class="n">imageDataFormat</span><span class="p">:</span> <span class="n">Analyze</span>
+</pre></div>
+</div>
+<p>For Analyze format the program expects to find the image data as a file,
+therefore when the fitting program is fitting individual data then a
+file name with a relative or complete path should be given.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">58</span>      <span class="n">analyzeHdr</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">WIP_Forearm_T2_CLEAR</span><span class="o">.</span><span class="n">hdr</span>
+<span class="mi">59</span>      <span class="n">analyzeImg</span><span class="p">:</span> <span class="n">simpleModelData</span><span class="o">/</span><span class="n">WIP_Forearm_T2_CLEAR</span><span class="o">.</span><span class="n">img</span>
+</pre></div>
+</div>
+<p>Nifti data can come in the form of a single file, either zipped or not,
+or as a series of files, perhaps corresponding to individual echo times
+for the T<sub>2</sub> data. If this is the case then the directory where
+the data can be found must be entered.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">imageDataFormat</span><span class="p">:</span> <span class="n">nifti</span>
+
+<span class="c1"># when individual files</span>
+
+<span class="n">niftiData</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">NEH69</span>\<span class="n">Dropbox</span>\<span class="n">projects</span>\<span class="n">programming</span>\<span class="mi">2019</span>\<span class="n">MRIstudyDescription</span>\<span class="n">simpleModelData</span>\<span class="n">WIP_Forearm_T2_CLEAR</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+
+<span class="c1"># when a series of nifti files</span>
+
+<span class="n">niftiData</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">NEH69</span>\<span class="n">Dropbox</span>\<span class="n">projects</span>\<span class="n">programming</span>\<span class="mi">2019</span>\<span class="n">MRIstudyDescription</span>\<span class="n">simpleModelData</span>\<span class="n">niffti</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">FitModeldData file main parameters</a><ul>
+<li><a class="reference internal" href="#model-definition">Model Definition</a><ul>
+<li><a class="reference internal" href="#study-data-directory-structure-used-or-not">Study Data Directory Structure Used or Not.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#defining-sessions-imaged-regions-and-slices">Defining sessions, imaged regions and slices</a></li>
+<li><a class="reference internal" href="#updating-the-values-in-the-lmfit-parameter-structures">Updating the values in the LMFIT parameter structures.</a></li>
+<li><a class="reference internal" href="#roi-author-preferences-roiauthorpreference">ROI Author Preferences :: roiAuthorPreference</a></li>
+<li><a class="reference internal" href="#use-roi-outline-useroioutline">Use Roi Outline :: useRoiOutline</a></li>
+<li><a class="reference internal" href="#image-data-format-imagedataformat">Image Data Format :: imageDataFormat</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch5.html"
+                        title="previous chapter">Set-up of the fitModeldata yaml file</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ch7.html"
+                        title="next chapter">Fitting T<sub>2</sub> Data with fitEPGazz.py</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/ch6.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ch7.html" title="Fitting T2 Data with fitEPGazz.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ch5.html" title="Set-up of the fitModeldata yaml file"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

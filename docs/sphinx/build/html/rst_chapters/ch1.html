@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating a Study Structure &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating the study Description File using the GUI Program" href="ch2.html" />
+    <link rel="prev" title="T2EPGStudiesMuscle" href="intro.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ch2.html" title="Creating the study Description File using the GUI Program"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="T2EPGStudiesMuscle"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="creating-a-study-structure">
+<h1>Creating a Study Structure<a class="headerlink" href="#creating-a-study-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Most clinical MRI studies are well defined before they are started and
+follow a basic design pattern based on the following criteria:</p>
+<ul class="simple">
+<li>number of participants</li>
+<li>number of visits</li>
+<li>control/participant groups</li>
+<li>MRI protocols</li>
+<li>persons working on the study, radiographers, principal investigator,
+post-docs</li>
+<li>data analysis</li>
+<li>final report generation</li>
+</ul>
+<p>Therefore, one can design a data directory structure based on this
+knowledge and fill it in beforehand with place-holder files for the
+subsequent data analysis. This idea has been developed by people
+studying the brain and aids with data sharing and multi-site projects as
+data can be expected to be in certain directories. For more information
+see their web-site <a class="reference external" href="http://bids.neuroimaging.io/">http://bids.neuroimaging.io/</a>. We have attempted to
+follow their ideas for use in analysing T<sub>2</sub> data via EPG
+methods.</p>
+<p>The principle idea is to describe the study and data directory structure
+in a study template file which can be used by the data analysis software
+to verify the study and the results. The study template file is
+typically a YAML or JSON file that is a human readable text file that is
+structured in a way that it can be read in by programs written in python
+for example to create a dictionary structure that describes the project
+and data directory.</p>
+<p>Advantages to this approach are many and become more numerous and
+beneficial with time.</p>
+<ul class="simple">
+<li>controlled vocabulary of description words for use in file names</li>
+<li>automated generation of file names</li>
+<li>automated generation of template files, for example Region of
+Interest files</li>
+<li>defined directory structure to store original data and result files</li>
+<li>similar studies use the same template directory structure and
+file-naming conventions</li>
+<li>long time studies can be be easily understood in terms of where
+things are</li>
+<li>processing scripts can be simplified and used between similar but
+different studies</li>
+<li>changes in personnel working on the study can be tracked over time</li>
+</ul>
+</div>
+<div class="section" id="study-description-file">
+<h2>Study Description File<a class="headerlink" href="#study-description-file" title="Permalink to this headline">¶</a></h2>
+<p>The study description file contains different types of information:</p>
+<ul class="simple">
+<li>details of the study<ul>
+<li>study name</li>
+<li>number of participants in the study</li>
+<li>number of visits</li>
+<li>participants grouped in terms of healthy controls and patients and
+sub-groups based on the number of visits</li>
+<li>information on staff involved in the study, name, email, job
+description</li>
+</ul>
+</li>
+<li>the MRI protocols used<ul>
+<li>protocols used, T<sub>2</sub>, dixon, diffusion</li>
+<li>imaged regions of the body, leg, arm, head</li>
+</ul>
+</li>
+<li>analysis of the images<ul>
+<li>slices used in the analysis</li>
+<li>ROIs associated with which imaged region</li>
+<li>ROI label names</li>
+</ul>
+</li>
+</ul>
+<p>The order of the different parts of the study description file is not
+important. Related information is grouped together, however since most
+of the file is generated by a program, it is saved in alphabetical order
+in terms of description items.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Creating a Study Structure</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#study-description-file">Study Description File</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">T2EPGStudiesMuscle</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ch2.html"
+                        title="next chapter">Creating the study Description File using the GUI Program</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/ch1.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ch2.html" title="Creating the study Description File using the GUI Program"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="T2EPGStudiesMuscle"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

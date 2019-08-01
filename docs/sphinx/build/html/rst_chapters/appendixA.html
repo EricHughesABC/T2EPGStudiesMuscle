@@ -1,0 +1,615 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Appendix A. Model Parameter Files and Fitting Equations &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Naming Conventions for ROI File-names" href="ch9.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ch9.html" title="Naming Conventions for ROI File-names"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="appendix-a-model-parameter-files-and-fitting-equations">
+<h1>Appendix A. Model Parameter Files and Fitting Equations<a class="headerlink" href="#appendix-a-model-parameter-files-and-fitting-equations" title="Permalink to this headline">¶</a></h1>
+<p>Table A.1 EPGAzz :: azz_fatmuscle_epg_model_params.json</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="15%" />
+<col width="18%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Min</th>
+<th class="head">Max</th>
+<th class="head">Vary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A_f</td>
+<td>0.2</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>A_m</td>
+<td>0.8</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>T1_m</td>
+<td>1400.0</td>
+<td>0</td>
+<td>4000</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>T1_f</td>
+<td>365.0</td>
+<td>0</td>
+<td>1000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_m</td>
+<td>40.0</td>
+<td>0</td>
+<td>100</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>c_l</td>
+<td>0.6</td>
+<td>0</td>
+<td>2</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>c_s</td>
+<td>0.5</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>t2_fl</td>
+<td>250.0</td>
+<td>0</td>
+<td>2000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_fs</td>
+<td>50.0</td>
+<td>0</td>
+<td>100</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>B1</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>echo</td>
+<td>10.0</td>
+<td>0</td>
+<td>30</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(S\left( \text{echo} \right) = A_{f}\left\lbrack c_{l}.\exp\left( \frac{\text{echo}}{{T2}_{\text{fl}}} \right) + c_{s}.\exp\left( \frac{\text{echo}}{{T2}_{\text{fs}}} \right) \right\rbrack + A_{m}\left\lbrack \exp\left( \frac{\text{echo}}{{T2}_{m}} \right) \right\rbrack\)</span></p>
+<p>Table A.2 fatEPG2 :: two_fat_epg2_model_params.json</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="15%" />
+<col width="18%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Min</th>
+<th class="head">Max</th>
+<th class="head">Vary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A_f</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>A_m</td>
+<td>0.0</td>
+<td>0</td>
+<td>2</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_m</td>
+<td>40.0</td>
+<td>0</td>
+<td>100</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>T1_m</td>
+<td>1400.0</td>
+<td>0</td>
+<td>4000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>T1_f</td>
+<td>365.0</td>
+<td>0</td>
+<td>1000</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>c_l</td>
+<td>0.2</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>c_s</td>
+<td>0.8</td>
+<td>0</td>
+<td>2.0</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>t2_fl</td>
+<td>500.0</td>
+<td>0</td>
+<td>2000</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>t2_fs</td>
+<td>100.0</td>
+<td>0</td>
+<td>2000</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>B1</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>echo</td>
+<td>10.0</td>
+<td>0</td>
+<td>30</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(S\left( \text{echo} \right) = A_{f}\left\lbrack c_{l}.\exp\left( \frac{\text{echo}}{{T2}_{\text{fl}}} \right) + c_{s}.\exp\left( \frac{\text{echo}}{{T2}_{\text{fs}}} \right) \right\rbrack\)</span></p>
+<p>Table A.3 fatEPG1 :: one_fat_epg1_model_params.json</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="15%" />
+<col width="18%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Min</th>
+<th class="head">Max</th>
+<th class="head">Vary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A_f</td>
+<td>1.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>A_m</td>
+<td>0.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_m</td>
+<td>40.0</td>
+<td>0</td>
+<td>100</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>T1_m</td>
+<td>1400.0</td>
+<td>0</td>
+<td>4000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>T1_f</td>
+<td>365.0</td>
+<td>0</td>
+<td>1000</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>c_l</td>
+<td>1.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>c_s</td>
+<td>0.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>t2_fl</td>
+<td>250.0</td>
+<td>0</td>
+<td>2000</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>t2_fs</td>
+<td>50.0</td>
+<td>0</td>
+<td>100</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>B1</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>echo</td>
+<td>10.0</td>
+<td>0</td>
+<td>30</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(S\left( \text{echo} \right) = A_{f}\left\lbrack c_{l}.\exp\left( \frac{\text{echo}}{{T2}_{\text{fl}}} \right) \right\rbrack\)</span></p>
+<p>Table A.4 muscleEPG1 :: one_fatmuscle_epg1_model_params.json</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="15%" />
+<col width="18%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Min</th>
+<th class="head">Max</th>
+<th class="head">Vary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A_f</td>
+<td>0.2</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>A_m</td>
+<td>0.8</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>T1_m</td>
+<td>1400.0</td>
+<td>0</td>
+<td>4000</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>T1_f</td>
+<td>365.0</td>
+<td>0</td>
+<td>1000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_m</td>
+<td>40.0</td>
+<td>0</td>
+<td>100</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>c_l</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>c_s</td>
+<td>0.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>t2_fl</td>
+<td>140.0</td>
+<td>0</td>
+<td>2000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_fs</td>
+<td>50.0</td>
+<td>0</td>
+<td>100</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>B1</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>echo</td>
+<td>10.0</td>
+<td>0</td>
+<td>30</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(S\left( \text{echo} \right) = A_{f}\left\lbrack c_{l}.\exp\left( \frac{\text{echo}}{{T2}_{\text{fl}}} \right) \right\rbrack + A_{m}\left\lbrack \exp\left( \frac{\text{echo}}{{T2}_{m}} \right) \right\rbrack\)</span></p>
+<p>Table A.5 muscleEPG2 :: two_fatmuscle_epg2_model_params.json</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="15%" />
+<col width="18%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Min</th>
+<th class="head">Max</th>
+<th class="head">Vary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A_f</td>
+<td>0.2</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>A_m</td>
+<td>0.8</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>T1_m</td>
+<td>1400.0</td>
+<td>0</td>
+<td>4000</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>T1_f</td>
+<td>365.0</td>
+<td>0</td>
+<td>1000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_m</td>
+<td>40.0</td>
+<td>0</td>
+<td>100</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>c_l</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>c_s</td>
+<td>0.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>t2_fl</td>
+<td>250.0</td>
+<td>0</td>
+<td>2000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_fs</td>
+<td>50.0</td>
+<td>0</td>
+<td>100</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>B1</td>
+<td>1.0</td>
+<td>0</td>
+<td>2</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>echo</td>
+<td>10.0</td>
+<td>0</td>
+<td>30</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(S\left( \text{echo} \right) = A_{f}\left\lbrack c_{l}.\exp\left( \frac{\text{echo}}{{T2}_{\text{fl}}} \right) \right\rbrack + A_{m}\left\lbrack \exp\left( \frac{\text{echo}}{{T2}_{m}} \right) \right\rbrack\)</span></p>
+<p>Table A.6 phantomEPG1 :: oneParamEPGphantom_model_params.json</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="15%" />
+<col width="18%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Min</th>
+<th class="head">Max</th>
+<th class="head">Vary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A_f</td>
+<td>0.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>A_m</td>
+<td>1.5</td>
+<td>0</td>
+<td>1.75</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>t2_m</td>
+<td>100.0</td>
+<td>0</td>
+<td>1000</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>T1_m</td>
+<td>1400.0</td>
+<td>0</td>
+<td>4000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>T1_f</td>
+<td>0.0</td>
+<td>0</td>
+<td>1000</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>c_l</td>
+<td>0.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>c_s</td>
+<td>0.0</td>
+<td>0</td>
+<td>2.0</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>t2_fl</td>
+<td>0.0</td>
+<td>0</td>
+<td>2000</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>t2_fs</td>
+<td>0.0</td>
+<td>0</td>
+<td>100</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>B1</td>
+<td>0.8</td>
+<td>0.5</td>
+<td>1.1</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>echo</td>
+<td>8.0</td>
+<td>0</td>
+<td>30</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(S\left( \text{echo} \right) = A_{m}\left\lbrack \exp\left( \frac{\text{echo}}{{T2}_{m}} \right) \right\rbrack\)</span></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch9.html"
+                        title="previous chapter">Naming Conventions for ROI File-names</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/appendixA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ch9.html" title="Naming Conventions for ROI File-names"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
