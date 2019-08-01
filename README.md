@@ -26,7 +26,7 @@ This repository consists of a number of python programs to set up a CPMG T2 MRI 
     - This program fits the T2 CPMG MRI data.
     
     
-Further documentation can be found in the docs directory in terms of a word document and pdf file    
+Further documentation can be found  at docs/sphinx/build/html/index.html   
 
 ### An example of the directory structure created for a simple MRI study
 
