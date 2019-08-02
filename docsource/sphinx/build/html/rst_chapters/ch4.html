@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Analyzing Data in the Study Structure &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Set-up of the fitModeldata yaml file" href="ch5.html" />
+    <link rel="prev" title="Creating the Study Directory Structure" href="ch3.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ch5.html" title="Set-up of the fitModeldata yaml file"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ch3.html" title="Creating the Study Directory Structure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="analyzing-data-in-the-study-structure">
+<h1>Analyzing Data in the Study Structure<a class="headerlink" href="#analyzing-data-in-the-study-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="copying-image-data-into-the-study-directory-structure">
+<h2>Copying image data into the study directory structure<a class="headerlink" href="#copying-image-data-into-the-study-directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>To start with, copy the image data into the testStudy data directory.
+The image data is in ANALYZE format and can be found in the
+<strong>simplemodelData</strong> directory. It needs to be copied into the
+T<sub>2</sub> directory, see the tree structure above. The two image files
+are</p>
+<div class="line-block">
+<div class="line">WIP_Forearm_T2_CLEAR.hdr</div>
+<div class="line">WIP_Forearm_T2_CLEAR.img</div>
+</div>
+</div>
+<div class="section" id="modifying-the-roi-files-for-the-data">
+<h2>Modifying the ROI files for the data<a class="headerlink" href="#modifying-the-roi-files-for-the-data" title="Permalink to this headline">¶</a></h2>
+<p>ROI template files were created automatically in the previous section.
+They now need to be edited using imageJ to correspond correctly to the
+data in the image file. An example is shown in Figure 1 below. The ROI
+file is loaded into imageJ by dragging the zip file on to the toolbar of
+the imageJ main window.</p>
+<p><a class="reference internal" href="../_images/image11.png"><img alt="ImageJ main window" src="../_images/image11.png" style="width: 5.83333in; height: 1.23194in;" /></a></p>
+<p>Figure 1 Drag files onto this window to load them into imageJ</p>
+<p>The image is loaded in a similar manner, drag the hdr or img file onto
+the toolbar of the main imageJ window. The image needs to be flipped in
+the vertical direction as in Figure 2, before editing the ROIs.</p>
+<p><a class="reference internal" href="../_images/image21.png"><img alt="Flip the image" src="../_images/image21.png" style="width: 5.83333in; height: 7.28056in;" /></a></p>
+<p>Figure 2 Flip vertically the data set before working with the ROIs</p>
+<p>In Figure 3, the images have been flipped and the ROI file for the
+outlines have been loaded. One can see on the image the outline of the
+template ROI that will be edited. The ROI is edited by clicking the
+polygon button in the main imageJ window. Then clicking outside the
+template ROI and then clicking again at the position where you want to
+start drawing the ROI</p>
+<p><a class="reference internal" href="../_images/image31.png"><img alt="Template outline ROI ready to be edited" src="../_images/image31.png" style="width: 5.29514in; height: 3.97292in;" /></a></p>
+<p>Figure 3 Outline template ROI prior to setting the polygon button and
+editing</p>
+<p>Upon completion of the drawing of the ROI the update button is pressed
+in the ROI manager window to save the modifications. An example of a
+edited ROI is shown in Figure 4. When all ROIs have been drawn, making
+sure to increment the slice to correspond with the ROI name, all the
+ROIs are highlighted in the ROI manager window and the <strong>more</strong> button
+is clicked and then the <strong>save</strong> button. The user should then overwrite
+the corresponding zip ROI file.</p>
+<p><a class="reference internal" href="../_images/image41.png"><img alt="Modified ROI ready to be updated" src="../_images/image41.png" style="width: 5.41597in; height: 3.93333in;" /></a></p>
+<p>Figure 4 Newly drawn ROI ouline the muscle and fat of the forearm</p>
+<p>The rois for the fat are best drawn using the rectangle tool in imageJ.
+Figure 5 shows the fat ROIs about to be saved after they have been
+edited</p>
+<p><a class="reference internal" href="../_images/image51.png"><img alt="Fat Rois" src="../_images/image51.png" style="width: 5.83333in; height: 4.27431in;" /></a></p>
+<p>Figure 5 Fat ROIs using rectangle tool ready to be saved</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Analyzing Data in the Study Structure</a><ul>
+<li><a class="reference internal" href="#copying-image-data-into-the-study-directory-structure">Copying image data into the study directory structure</a></li>
+<li><a class="reference internal" href="#modifying-the-roi-files-for-the-data">Modifying the ROI files for the data</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch3.html"
+                        title="previous chapter">Creating the Study Directory Structure</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ch5.html"
+                        title="next chapter">Set-up of the fitModeldata yaml file</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/ch4.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ch5.html" title="Set-up of the fitModeldata yaml file"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ch3.html" title="Creating the Study Directory Structure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

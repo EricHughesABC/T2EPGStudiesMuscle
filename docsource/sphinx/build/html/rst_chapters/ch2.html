@@ -1,0 +1,271 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating the study Description File using the GUI Program &#8212; T2EPGStudiesMuscle 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating the Study Directory Structure" href="ch3.html" />
+    <link rel="prev" title="Creating a Study Structure" href="ch1.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ch3.html" title="Creating the Study Directory Structure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ch1.html" title="Creating a Study Structure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="creating-the-study-description-file-using-the-gui-program">
+<h1>Creating the study Description File using the GUI Program<a class="headerlink" href="#creating-the-study-description-file-using-the-gui-program" title="Permalink to this headline">¶</a></h1>
+<p>The study description file contains all the information about the study.
+This file can be created by hand, but it is easy to introduce errors, so
+a simple GUI program has been written that asks for the information in a
+series of dialogs. Below we show the dialog boxes for a simple study
+that has a single participant, session, imaged region and ROI file.</p>
+<p>The program is started from the command line and has no command-line
+arguments</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span> <span class="n">python</span> <span class="n">studyDescriptionGUI</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="section" id="step-1-define-the-name-of-the-study">
+<h2>Step 1. Define the name of the study<a class="headerlink" href="#step-1-define-the-name-of-the-study" title="Permalink to this headline">¶</a></h2>
+<p>The first step is define the name of the study and where it will be
+saved using a directory dialog. If the directory does not already exist,
+it can be created using the dialog.</p>
+<p><a class="reference internal" href="../_images/image1.png"><img alt="study name dialog" src="../_images/image1.png" style="width: 5.83333in; height: 1.08819in;" /></a></p>
+<p>Figure 1 Define the name of the study</p>
+</div>
+<div class="section" id="step-2-number-of-different-groups-in-the-study">
+<h2>Step 2. Number of different Groups in the study<a class="headerlink" href="#step-2-number-of-different-groups-in-the-study" title="Permalink to this headline">¶</a></h2>
+<p>In the study the number of different participant groups is defined. This
+is based on simple criteria such as healthy controls and participants
+with the condition. Within these groups, sub-groups can be defined based
+on the number of visits/sessions, the different protocols that they
+have.</p>
+<p><a class="reference internal" href="../_images/image2.png"><img alt="Number of Different Groups" src="../_images/image2.png" style="width: 5.62083in; height: 2.04236in;" /></a></p>
+<p>Figure 2 Number of Different Groups</p>
+</div>
+<div class="section" id="step-3-number-of-mri-protocols-used-in-the-study">
+<h2>Step 3. Number of MRI protocols used in the study<a class="headerlink" href="#step-3-number-of-mri-protocols-used-in-the-study" title="Permalink to this headline">¶</a></h2>
+<p>The different MRI protocols that will be performed in the study should
+be listed next. Examples could be based on diffusion, T<sub>2</sub>,
+T<sub>1</sub>, and Dixon. The MRI protocols are added to the field
+separated by a space. In the example one MRI protocol is given.</p>
+<p><a class="reference internal" href="../_images/image3.png"><img alt="Number of MRI protocols" src="../_images/image3.png" style="width: 2.68403in; height: 1.18958in;" /></a></p>
+<p>Figure 3 Names of the protocols used in the study</p>
+</div>
+<div class="section" id="step-4-enter-the-initials-of-the-people-who-will-have-created-rois">
+<h2>Step 4. Enter the initials of the people who will have created ROIs<a class="headerlink" href="#step-4-enter-the-initials-of-the-people-who-will-have-created-rois" title="Permalink to this headline">¶</a></h2>
+<p>In the data analysis of a study many people work on the project,
+especially with the data analysis. Many projects require regions of
+interest to be drawn on the images for use in the analysis. This task is
+often performed by different people so it is useful for quality control
+reasons to keep track of who created the ROIs and this is done by giving
+a list of initials of the different people who will draw the ROIs. This
+is added to the ROI name so that this aspect of the data analysis may be
+audited. In the dialog one set of initials has been input. Further sets
+of initials could be entered separated by a space</p>
+<p><a class="reference internal" href="../_images/image4.png"><img alt="Roi Author Initials" src="../_images/image4.png" style="width: 2.8in; height: 1.18958in;" /></a></p>
+<p>Figure 4 List of author initials who have created ROIs</p>
+</div>
+<div class="section" id="step-5-enter-the-names-of-the-groups-number-of-sessions-and-a-list-of-imaged-regions">
+<h2>Step 5. Enter the names of the groups, number of sessions and a list of imaged regions<a class="headerlink" href="#step-5-enter-the-names-of-the-groups-number-of-sessions-and-a-list-of-imaged-regions" title="Permalink to this headline">¶</a></h2>
+<p>The names of the different groups of participants are entered in this
+dialog. The names must be unique. For each group the number of
+sessions/visits that the participants in the group attend during the
+study is entered. Finally, the imaged regions of the body are entered.
+In this field, if a phantom is used throughout the study a place name
+for it may be entered.</p>
+<p><a class="reference internal" href="../_images/image5.png"><img alt="groupNameSessionImagedRegions" src="../_images/image5.png" style="width: 5.83333in; height: 0.87292in;" /></a></p>
+<p>Figure 5 For each group defined previously, enter a name for the group
+the number of visits/sessions the participants will take part in and the
+imaged regions that will be looked at</p>
+</div>
+<div class="section" id="step-6-add-the-list-of-participant-names-id-codes-for-each-defined-group">
+<h2>Step 6. Add the list of participant names/id codes for each defined group<a class="headerlink" href="#step-6-add-the-list-of-participant-names-id-codes-for-each-defined-group" title="Permalink to this headline">¶</a></h2>
+<p>For each defined group the participants id-code is entered in this
+dialog. The id-code is entered one per line. If more than one group is
+defined in the study then then it will appear along side the other
+groups in the dialog window.</p>
+<p><a class="reference internal" href="../_images/image6.png"><img alt="participant Names" src="../_images/image6.png" style="width: 4.11597in; height: 2.98958in;" /></a></p>
+<p>Figure 6 List of participant names/ID codes for each defined group</p>
+</div>
+<div class="section" id="step-7-definition-of-roi-imaged-region-types">
+<h2>Step 7. Definition of ROI/imaged region types<a class="headerlink" href="#step-7-definition-of-roi-imaged-region-types" title="Permalink to this headline">¶</a></h2>
+<p>In this step the ROI/Imaged Region types are entered for each imaged
+region, forearm, upperarm,… This dialog is repeated separately for
+each group in the study. The group name appears in the dialog title in
+the border. Each ROI/Imaged Region type is entered on a separate line.</p>
+<p><a class="reference internal" href="../_images/image7.png"><img alt="image6" src="../_images/image7.png" style="width: 5.11597in; height: 2.98958in;" /></a></p>
+<p>Figure 7 ROI/imaged region types being entered for Healthy volunteers
+group and the foream imaged region</p>
+</div>
+<div class="section" id="step-8-definition-of-the-labels-for-individual-rois">
+<h2>Step 8. Definition of the labels for individual ROIs<a class="headerlink" href="#step-8-definition-of-the-labels-for-individual-rois" title="Permalink to this headline">¶</a></h2>
+<p>The names of the regions of interest for the different ROI/imaged region
+types are entered in this dialog. The names can be words or numbers, but
+must be unique with the same category</p>
+<p><a class="reference internal" href="../_images/image8.png"><img alt="image7" src="../_images/image8.png" style="width: 4.2in; height: 1.75764in;" /></a></p>
+<p>Figure 8 ROI labels entered for the different imaged regions and imaged
+region types</p>
+</div>
+<div class="section" id="step-9-slice-index-for-the-different-imaged-regions">
+<h2>Step 9. Slice index for the different imaged regions<a class="headerlink" href="#step-9-slice-index-for-the-different-imaged-regions" title="Permalink to this headline">¶</a></h2>
+<p>The slices used in the study are dependent on the MRI protocol, the
+imaged region and imaged region/ROI type. Imaged slices are numbered
+based on a starting index of 1.</p>
+<p><a class="reference internal" href="../_images/image9.png"><img alt="image8" src="../_images/image9.png" style="width: 5.43125in; height: 1.82083in;" /></a></p>
+<p>Figure 9 Slices used in the analysis of the data are defined in this
+dialog.</p>
+</div>
+<div class="section" id="step-10-saving-the-study-template-file">
+<h2>Step 10. Saving the study template file<a class="headerlink" href="#step-10-saving-the-study-template-file" title="Permalink to this headline">¶</a></h2>
+<p>When the final dialog is closed the study template file is saved in the
+study directory. A number of fields within the study template file
+remain blank, these should be filled in by the user, using a text
+editor. The fields requiring updating by the user are:</p>
+<ul class="simple">
+<li>principal investigators</li>
+<li>research associates</li>
+<li>students</li>
+</ul>
+<p>Below is the study description file produced by the previous dialogs</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">studyName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">testStudy</span>
+<span class="nt">studyRootDir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MRIstudyDescription/examples</span>
+
+<span class="nt">HealthyVolunteers</span><span class="p">:</span>
+  <span class="nt">imagedRegions</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">forearm</span><span class="p p-Indicator">]</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HealthyVolunteers</span>
+  <span class="nt">numSessions</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">participants</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">HC-001</span><span class="p p-Indicator">]</span>
+  <span class="nt">rois</span><span class="p">:</span>
+    <span class="nt">forearm</span><span class="p">:</span>
+      <span class="nt">fat</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;1&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;2&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;3&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;4&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;5&#39;</span><span class="p p-Indicator">]</span>
+      <span class="nt">muscle</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">fg</span><span class="p p-Indicator">,</span> <span class="nv">eg</span><span class="p p-Indicator">]</span>
+      <span class="nt">outline</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;1&#39;</span><span class="p p-Indicator">]</span>
+  <span class="nt">sessions</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">sess-1</span><span class="p p-Indicator">]</span>
+  <span class="nt">slices</span><span class="p">:</span>
+    <span class="nt">forearm</span><span class="p">:</span>
+      <span class="nt">fat</span><span class="p">:</span>
+        <span class="nt">T2</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;2&#39;</span><span class="p p-Indicator">]</span>
+      <span class="nt">muscle</span><span class="p">:</span>
+        <span class="nt">T2</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;1&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;2&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;3&#39;</span><span class="p p-Indicator">]</span>
+      <span class="nt">outline</span><span class="p">:</span>
+        <span class="nt">T2</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;1&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;2&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;3&#39;</span><span class="p p-Indicator">]</span>
+
+<span class="nt">groupNames</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">HealthyVolunteers</span><span class="p p-Indicator">]</span>
+<span class="nt">protocols</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">T2</span><span class="p p-Indicator">]</span>
+<span class="nt">roiAuthors</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">EH</span><span class="p p-Indicator">]</span>
+
+<span class="nt">principalInvestigators</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span><span class="nt">address</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> email</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> initials</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> name</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">}</span>
+
+<span class="nt">researchAssociates</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span><span class="nt">address</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> email</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> initials</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> name</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">}</span>
+
+<span class="nt">students</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span><span class="nt">address</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> email</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> initials</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">,</span><span class="nt"> name</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Creating the study Description File using the GUI Program</a><ul>
+<li><a class="reference internal" href="#step-1-define-the-name-of-the-study">Step 1. Define the name of the study</a></li>
+<li><a class="reference internal" href="#step-2-number-of-different-groups-in-the-study">Step 2. Number of different Groups in the study</a></li>
+<li><a class="reference internal" href="#step-3-number-of-mri-protocols-used-in-the-study">Step 3. Number of MRI protocols used in the study</a></li>
+<li><a class="reference internal" href="#step-4-enter-the-initials-of-the-people-who-will-have-created-rois">Step 4. Enter the initials of the people who will have created ROIs</a></li>
+<li><a class="reference internal" href="#step-5-enter-the-names-of-the-groups-number-of-sessions-and-a-list-of-imaged-regions">Step 5. Enter the names of the groups, number of sessions and a list of imaged regions</a></li>
+<li><a class="reference internal" href="#step-6-add-the-list-of-participant-names-id-codes-for-each-defined-group">Step 6. Add the list of participant names/id codes for each defined group</a></li>
+<li><a class="reference internal" href="#step-7-definition-of-roi-imaged-region-types">Step 7. Definition of ROI/imaged region types</a></li>
+<li><a class="reference internal" href="#step-8-definition-of-the-labels-for-individual-rois">Step 8. Definition of the labels for individual ROIs</a></li>
+<li><a class="reference internal" href="#step-9-slice-index-for-the-different-imaged-regions">Step 9. Slice index for the different imaged regions</a></li>
+<li><a class="reference internal" href="#step-10-saving-the-study-template-file">Step 10. Saving the study template file</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch1.html"
+                        title="previous chapter">Creating a Study Structure</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ch3.html"
+                        title="next chapter">Creating the Study Directory Structure</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst_chapters/ch2.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ch3.html" title="Creating the Study Directory Structure"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ch1.html" title="Creating a Study Structure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">T2EPGStudiesMuscle 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Eric Hughes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
