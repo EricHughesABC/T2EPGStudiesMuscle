@@ -297,8 +297,9 @@ def fit_T2EPGCPMG(pool_params):
     """
 
     m, yyy, m_id, roiName, ppp, Nechos, dx,   p90_array, p180_array, fit_modelName = pool_params
+    if yyy.max() != 0:
+        yyy = yyy/yyy.max()
 
-    yyy = yyy/yyy.max()
     fitModel = lm.Minimizer(cpmg_epg_genint, ppp, fcn_args=( fit_modelName, Nechos, dx,  p90_array, p180_array, yyy))
     results  = fitModel.minimize()
 
@@ -835,6 +836,9 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                     roiFile = roiIndvidualFileList[0]
                     print(fitModelData.useRoiOutline,roiIndvidualFileList)
 
+                print("**********************************************")
+                print("roiFile used:", roiFile)
+                print("**********************************************")
                 roi_set = ijroieh.read_roi_zip(roiFile)
 
                 ###########################################################
@@ -844,7 +848,20 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                 #
                 ###########################################################
 
+                print("**********************************************")
+                print("Read in images")
+                print("**********************************************")
+
+                print("studyDir_directory", studyDir_directory)
+                print("subject",subject)
+                print("session",session)
+                print("imagedRegion", imagedRegion)
+                print("*analyzeDirectory", *analyzeDirectory)
                 directory = os.path.join(studyDir_directory, subject, session, imagedRegion,*analyzeDirectory)
+                print("directory", directory)
+
+                if not os.path.exists(directory):
+                    sys.exit()
 
                 if fitModelData.imageDataFormat.lower() == "analyze":
                     # read in analyze data
@@ -857,6 +874,7 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                     imageDataT2 =np.flipud(imageDataT2.swapaxes(1,0))
 
                 elif fitModelData.imageDataFormat.lower() == "nifti":
+                    print("read in nifti data")
                     niftiImageFilesList = [os.path.join(directory,fn) for fn in os.listdir(directory) if ".nii" in fn ]
 
                     print( "niftiImageFilesList",  niftiImageFilesList)
@@ -898,12 +916,16 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                             elif len(niftiImageFilesList)==1:
                                 # read in nifti as a single file
 
+                                print("Found a single nifti image in directory ", niftiDir)
+
                                 img = nibabel.load(niftiImageFilesList[0])
                                 imageDataT2 = img.get_data()
                                 imageDataT2 =np.flipud(imageDataT2.swapaxes(1,0))
 
                             elif len(niftiImageFilesList)>1:
                                 # read in files as a series and stick them together
+
+                                print("Found numerous nifti images in directory ", niftiDir)
 
                                 fn_list = niftiImageFilesList
                                 fn_list.sort()
@@ -917,6 +939,8 @@ def fitEPGAZZ_inStudyStructure(fitModelData=None, studyDir=None, yamlfileName=No
                                 for i in range(nechos):
                                     ddd[:,:,:,i]= niilist[i].get_data()
                                 imageDataT2 =np.flipud(ddd.swapaxes(1,0))
+
+                                print("imageDataT2.shape",imageDataT2.shape)
 
 
 
